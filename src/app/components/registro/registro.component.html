@@ -1,0 +1,94 @@
+<div class="container p-5 my-5 bg-primary text-white">
+    
+      <h1>
+        Registro Usuario
+      </h1>
+      <h5>Inicia Registrando tu empresa y comienza la profesionalización de tus empleados en los cursos empresariales</h5>
+</div>
+<div class="container p-3">
+        <form >
+          
+          <div class="row g-2 ">
+            <div class="input-field col-md-6">
+              <label for="tipoDoc">Tipo documento</label>
+              <select class="form-select" name="tipoDoc" aria-label="Default select example" [(ngModel)]="usuario.tipoIdentificacion">
+                <option value="" disabled selected>Seleccione un tipo</option>
+                <option [ngValue]="doc.descripcionCorta" *ngFor="let doc of tDocs">{{doc.descripcionLarga}}</option>
+              </select>
+            </div>
+            <!--
+            <div class="input-field col-md-6">
+              <label for="name">Nombres Completos</label>
+              <input id="name" type="text" class="form-control" name="name" [(ngModel)]="usuario.nombre">
+  
+            </div>-->
+            
+            <div class="input-field  col-md-6">
+              <label for="identi">Numero de Identificación</label>
+              <input id="numeroId" type="text" class="form-control" name="identi"
+                [(ngModel)]="usuario.identificacion">
+            </div>
+          </div>
+          <div class="row g-3 ">
+            <div class="input-field  col-md-4">
+              <label for="email">Correo Electŕonico</label>
+              <input id="email" type="email" class="form-control" name="mail" [(ngModel)]="usuario.correo">
+  
+            </div>
+  
+            <div class="input-field  col-md-4">
+              <label for="password">Contraseña</label>
+              <input id="password" type="password" class="form-control" name="contraseña" [(ngModel)]="usuario.contrasena">
+  
+            </div>
+            <div class="input-field  col-md-4">
+              <label for="password2">Confirme la Contraseña</label>
+              <input id="password2" type="password" class="form-control" name="password2" [(ngModel)]="usuario.contrasena">
+  
+            </div>
+          </div>
+          <div class="row g-3 ">
+            <div class="input-field  col-md-4">
+              <label for="address">Dirección</label>
+              <input id="address" type="text" class="form-control" name="direcciones" [(ngModel)]="usuario.direccion">
+  
+            </div>
+            <div class="input-field col-md-4">
+              <label for="fechaCumpleaños">Fecha de Nacimiento</label>
+              <input type="date" class="form-control" name="fechaCumpleaños" [(ngModel)]="usuario.direccion">
+            </div>
+            
+            <div class="row g-3 ">
+              <div class=" col-md-4">
+                <p>
+                  <label>
+                    <input type="checkbox" />
+                    <span> Acepta <a data-bs-toggle="modal" data-bs-target="#exampleModal"> Terminos y condiciciones</a></span>
+                  </label>
+                </p>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary pulse" (click)="register()">Guardar</button>
+          
+        </form>
+</div>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Terminos y condiciones </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab sit officia exercitationem cumque. Incidunt aperiam consectetur qui quaerat accusamus perspiciatis, alias quam eligendi nisi facere inventore tempora temporibus dolores! Eligendi.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
