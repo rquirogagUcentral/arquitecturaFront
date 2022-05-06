@@ -1,14 +1,17 @@
-import { TipoDocumento } from "./tipoDocumento";
+import { Perfil } from "./Perfil";
 
 export class Usuario
 {
     id : number =0;
     tipoIdentificacion : string = '';
-    nombre : string = '';
-    apellido : string='';
     identificacion : string='';
-    edad : number = 0;
     contrasena : string = '';
-    direccion : string = '';
+    habilitado : boolean = false;
     correo : string = '';
+    nombre : string = '';
+    telefono : string = '';
+    fechaNacimiento : string = '';
+    perfil! : Perfil;
+    idEmpresa :string = '';
+    
 }

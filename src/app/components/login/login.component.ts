@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/Model/usuario';
+import { UsuarioServiceService } from 'src/app/services/usuario-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,13 @@ import { Usuario } from 'src/app/Model/usuario';
 export class LoginComponent implements OnInit {
 
   public usuario! : Usuario;
-  constructor() { 
-    this.usuario = new Usuario()
+  public usuarios! : Usuario[];
+  public identity : any;
+  constructor(
+    private _usuarioService : UsuarioServiceService,
+  ) { 
+    this.usuarios = new Array<Usuario>();
+    this.usuario = new Usuario;
   }
 
   ngOnInit(): void {
@@ -18,6 +24,10 @@ export class LoginComponent implements OnInit {
 
   login()
   {
-    
+    this._usuarioService.getUser().subscribe(
+      users => {
+        this.usuarios = users
+      });
+      console.log(this.usuarios)
   }
 }
