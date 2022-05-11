@@ -1,11 +1,20 @@
-<div class="container">
-
-    <div class="row">
-      <div class="s12 m4 l8 ">
-        <h2 class="header">Acceder</h2>
-        <div class="card horizontal">
-          <div class="card-content">
+<div class="container-sm p-5">
+  <div class="row align-items-center">
+    <div class="col">
+      <img src="../../../assets/img/login.png"/>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="s12 m4 l8 ">
+          <h2 class="header">Acceder</h2>           
             <form>
+              <div class="form-floating mb-3">
+                <label for="perfiles">Perfil</label>
+                <select class="form-select" name="perfiles" aria-label="Default select example" [(ngModel)]="usuario.perfil">
+                  <option value="" disabled selected>Seleccione su Perfil</option>
+                  <option [ngValue]="idPerfil" *ngFor="let p of perfiles">{{p.nombre}}</option>
+                </select>
+              </div>
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" #user="ngModel" maxlength="10" name="usuario"
                   [(ngModel)]="usuario.identificacion" placeholder="Documento de Identidad" required>
@@ -15,20 +24,17 @@
                 </div>
               </div>
               <div class="form-floating">
-                <input type="password" class="form-control" maxlength="30" id="floatingPassword" name="password"
+                <input type="password" class="form-control" maxlength="50" id="floatingPassword" name="password"
                   [(ngModel)]="usuario.contrasena" placeholder="Contraseña">
                 <label for="exampleInputPassword1" class="form-label">Contraseña</label>
               </div>
               <br>
-              <div class="card-action">
+              
                 <button type="submit" class="btn btn-primary" (click)="login()">Ingresar</button>
-                <button type="submit" class="btn btn-outline-secundary" [routerLink]="['/getPassword']">Olvidasta
-                  la Contraseña?</button>
-              </div>
+                <button type="submit" class="btn btn-outline-secundary" [routerLink]="['/getPassword']">Olvidasta la Contraseña?</button>
             </form>
-  
-          </div>
-  
         </div>
       </div>
     </div>
+  <div>
+</div>

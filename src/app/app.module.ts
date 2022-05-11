@@ -8,13 +8,23 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DocenteComponent } from './components/docente/docente.component';
+import { EmpleadoComponent } from './components/empleado/empleado.component';
+import { EmpresaComponent } from './components/empresa/empresa.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { CursoComponent } from './components/curso/curso.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
+    DocenteComponent,
+    EmpleadoComponent,
+    EmpresaComponent,
+    AdminComponent,
+    CursoComponent
   ],
   imports: [
     BrowserModule,
