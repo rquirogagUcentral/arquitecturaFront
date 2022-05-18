@@ -35,9 +35,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this._usuarioService.getProfile().subscribe(profile => {
-      console.log('profile: ',profile)
-      this.perfiles = profile
-      console.log('perfil',this.perfiles)
+      this._apiStorage.perfilSesion(profile)
+      this.perfiles = this._apiStorage.getPerfil
     });
     
   }

@@ -8,13 +8,13 @@
         <div class="s12 m4 l8 ">
           <h2 class="header">Acceder</h2>           
             <form>
-              <div class="form-floating mb-3">
+              <!--<div class="form-floating mb-3">
                 <label for="perfiles">Perfil</label>
                 <select class="form-select" name="perfiles" aria-label="Default select example" [(ngModel)]="usuario.perfil">
                   <option value="" disabled selected>Seleccione su Perfil</option>
                   <option [ngValue]="idPerfil" *ngFor="let p of perfiles">{{p.nombre}}</option>
                 </select>
-              </div>
+              </div>-->
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" #user="ngModel" maxlength="10" name="usuario"
                   [(ngModel)]="usuario.identificacion" placeholder="Documento de Identidad" required>

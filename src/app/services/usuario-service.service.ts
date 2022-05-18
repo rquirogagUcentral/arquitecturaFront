@@ -38,4 +38,9 @@ export class UsuarioServiceService {
     return this._http.get<Perfil[]>(path)
   }
 
+  getEmpleados(idEmpresa: String): Observable<Usuario[]>{
+    const path =`${this.url}/api/usuario/BuscarEmpresa/${idEmpresa}`
+    return this._http.get<Usuario[]>(path)
+  }
+
 }

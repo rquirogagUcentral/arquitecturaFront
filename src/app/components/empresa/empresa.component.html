@@ -1,1 +1,40 @@
-<p>empresa works!</p>
+<div class="container p-5">
+    <div>
+        <h3>Bienvenido {{usuario.nombre}}</h3>
+    </div>
+    <div class="container p-3">
+        
+
+        <div class="row p-3">
+            <div class="col">
+              <button type="button" class="btn btn-primary" routerLink="/register">
+                  Crear Empleado
+              </button>
+            </div>
+        </div>
+        <h4>Lista de Empleados</h4>
+        <div class="row g-3 p-3">
+            <div class=" col-md-4" *ngFor="let user of usuarios">
+              <div class="card-group">
+                <div class="card text-white bg-dark" style="width: 18rem;">
+                  <!--<img [src]="user.imagenServicio" class="card-img-top" alt="..."><img>-->
+        
+                  <div class="card-body">
+                    <h5 class="card-title">{{user.nombre}}</h5>
+                    <p class="card-text">{{user.correo}}</p>
+                   <!-- <div *ngIf="user; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>
+                        <button class="btn btn-info" (click)="guardar(card)" >Seleccionar</button>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                      <a [routerLink]="['/verServicio',card.idServicio]" class="btn btn-primary">Datos</a>
+                    </ng-template>
+                -->
+        
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

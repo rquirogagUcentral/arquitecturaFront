@@ -1,1 +1,72 @@
-<p>curso works!</p>
+<div class="container p-5 my-5 bg-primary text-white">
+    
+    <h1>
+      Registra Tu Curso
+    </h1>
+    <h5>Adicione aqui la información para explicar los conceptos generales del curso</h5>
+  </div>
+  <div class="container p-3">
+      <form >
+        <div class="row justify-content-sm-center">
+            <div class="form-floating col-6">
+                <input type="text" class="form-control" id="floatingInput" #user="ngModel" maxlength="40" name="nombreCurso"
+                  [(ngModel)]="curso.nombreCurso" placeholder="Nombre del curso" required>
+                <label for="floatingInput">Indica el nombre del curso</label>                
+              </div>
+        </div>
+        <div class="row justify-content-sm-center p-3">
+            <div class="form-floating col-6">
+                <label for="perfiles">Perfil</label>
+                <select class="form-select"  id="floatingInput" name="perfiles" aria-label="Default select example" [(ngModel)]="curso.idCurso">
+                  <option value="" disabled selected>Seleccione su Perfil</option>
+                  <option [ngValue]="p.id" *ngFor="let p of tipoCurso">{{p.tipoCurso}}</option>
+                </select>
+              </div>
+        </div>
+        <div class="row justify-content-sm-center p-3">
+            <div class="form-floating col-6">
+                <label for="floatingInput"  id="floatingInput">Indique el objetivo del curso</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="curso.objetivo"></textarea>
+            </div>
+        </div>
+        <div class="row justify-content-sm-center">
+            <div class="form-floating col-6">
+                <input type="text" class="form-control" id="floatingInput" #user="ngModel" maxlength="40" name="ubicacion"
+                  [(ngModel)]="curso.ubicacion" placeholder="Ubicación del curso" required>
+                <label for="floatingInput">Indica la Ubicación del curso</label>                
+              </div>
+        </div>
+        <div class="row justify-content-sm-center p-3">
+            <div class="form-floating col-6">
+                <!--<div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>-->
+                <input type="text" class="form-control" id="floatingInput" #user="ngModel" maxlength="10" name="valor"
+                  [(ngModel)]="curso.ubicacion" placeholder="Valor del curso" required>
+                <label for="floatingInput">Indica el Valor del curso</label>                
+                <!--<div class="input-group-append">
+                    <span class="input-group-text">.00</span>
+                  </div>-->
+            </div>
+        </div>
+        <div class="row justify-content-sm-center ">
+          
+          <div class="col-md-auto p-3">
+            <button type="submit" class="btn btn-primary pulse" (click)="registerCurso()">Guardar</button>
+          </div>
+          
+        </div>
+          <!--<div class=" col-md-4 p-2">
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span> Acepta <a data-bs-toggle="modal" data-bs-target="#exampleModal"> Terminos y condiciciones</a></span>
+              </label>
+            </p>
+          </div>-->
+        
+        
+        
+        
+      </form>
+  </div>

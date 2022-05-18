@@ -13,6 +13,7 @@ import { EmpleadoComponent } from './components/empleado/empleado.component';
 import { EmpresaComponent } from './components/empresa/empresa.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CursoComponent } from './components/curso/curso.component';
+import { CursoDetalleComponent } from './components/curso-detalle/curso-detalle.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CursoComponent } from './components/curso/curso.component';
     EmpleadoComponent,
     EmpresaComponent,
     AdminComponent,
-    CursoComponent
+    CursoComponent,
+    CursoDetalleComponent
   ],
   imports: [
     BrowserModule,
