@@ -19,14 +19,15 @@
                 <label for="perfiles">Perfil</label>
                 <select class="form-select"  id="floatingInput" name="perfiles" aria-label="Default select example" [(ngModel)]="curso.idCurso">
                   <option value="" disabled selected>Seleccione su Perfil</option>
-                  <option [ngValue]="p.id" *ngFor="let p of tipoCurso">{{p.tipoCurso}}</option>
+                  <option [ngValue]="p.id" *ngFor="let p of tipCurso">{{p.tipoCurso}}</option>
                 </select>
               </div>
         </div>
         <div class="row justify-content-sm-center p-3">
             <div class="form-floating col-6">
                 <label for="floatingInput"  id="floatingInput">Indique el objetivo del curso</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="curso.objetivo"></textarea>
+                <input type="text" class="form-control" id="floatingInput" #user="ngModel" maxlength="40" name="objetivo"
+                  [(ngModel)]="curso.objetivo" placeholder="Ubicación del curso" required>
             </div>
         </div>
         <div class="row justify-content-sm-center">
@@ -42,7 +43,7 @@
                     <span class="input-group-text">$</span>
                   </div>-->
                 <input type="text" class="form-control" id="floatingInput" #user="ngModel" maxlength="10" name="valor"
-                  [(ngModel)]="curso.ubicacion" placeholder="Valor del curso" required>
+                  [(ngModel)]="curso.precio" placeholder="Valor del curso" required>
                 <label for="floatingInput">Indica el Valor del curso</label>                
                 <!--<div class="input-group-append">
                     <span class="input-group-text">.00</span>

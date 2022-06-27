@@ -1,0 +1,49 @@
+<div class="container p-3">
+    <form >
+      
+      <div class="row g-2 ">
+        <div class="input-field  col-md-6">
+          <label for="identi">Nombre de la Lección</label>
+          <input id="numeroId" type="text" class="form-control" name="nombre"
+            [(ngModel)]="leccion.nombreLeccion">
+        </div>
+      </div>
+      <div class="row g-3 ">
+        <div class="input-field  col-md-4">
+          <label for="contenido">Contenido de la Lección</label>
+          <input id="contenido" type="text" class="form-control" name="contenido" [(ngModel)]="leccion.contenidoLeccion">
+
+        </div>
+        <div class="input-field  col-md-4">
+          <label for="pregunta">Indique la pregunta</label>
+          <input id="pregunta" type="text" class="form-control" name="pregunta" [(ngModel)]="leccion.pregunta">
+
+        </div>
+        
+      </div>
+      
+      <button type="submit" class="btn btn-primary pulse" (click)="crearLeccion()">Guardar</button>
+      
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#Leccion</th>
+            <th scope="col">Nombre de leccion</th>
+            <th scope="col">adiciona pregunta</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let l of lecciones" class="warning">
+            <th scope="row">{{ l.id }}</th>
+            <td>{{ l.nombreLeccion }}</td>
+            <td>{{ l.pregunta }}</td>
+            <td><button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]= "['/leccion-respuestas', l.id]">Add Respuesta</button></td>
+            
+        </tr>
+        </tbody>
+        </table>
+
+</div>
+

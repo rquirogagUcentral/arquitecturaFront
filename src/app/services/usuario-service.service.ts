@@ -33,6 +33,11 @@ export class UsuarioServiceService {
     return this._http.get<Usuario[]>(path)
   }
 
+  getUserById(id: number){
+    const path = `${this.url}/api/usuario/${id}`
+    return this._http.get<Usuario>(path)
+  }
+
   getProfile(): Observable<Perfil[]> {
     const path = `${this.url}/api/usuario/perfil`
     return this._http.get<Perfil[]>(path)

@@ -14,6 +14,11 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CursoComponent } from './components/curso/curso.component';
 import { CursoDetalleComponent } from './components/curso-detalle/curso-detalle.component';
+import { LeccionComponent } from './components/leccion/leccion.component';
+import { DatePipe } from '@angular/common';
+import { RspuestaComponent } from './components/rspuesta/rspuesta.component';
+import { EmpleadoDetalleComponent } from './components/empleado-detalle/empleado-detalle.component';
+import { PagoComponent } from './components/pago/pago.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,11 @@ import { CursoDetalleComponent } from './components/curso-detalle/curso-detalle.
     EmpresaComponent,
     AdminComponent,
     CursoComponent,
-    CursoDetalleComponent
+    CursoDetalleComponent,
+    LeccionComponent,
+    RspuestaComponent,
+    EmpleadoDetalleComponent,
+    PagoComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +43,9 @@ import { CursoDetalleComponent } from './components/curso-detalle/curso-detalle.
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

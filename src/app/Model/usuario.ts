@@ -13,5 +13,5 @@ export class Usuario
     fechaNacimiento : string = '';
     perfil! : Perfil;
     idEmpresa :string = '';
-    
+    checking: boolean = false;
 }

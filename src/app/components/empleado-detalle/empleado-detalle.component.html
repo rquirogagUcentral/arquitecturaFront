@@ -1,0 +1,90 @@
+<div class="container">
+    <div>
+        <h3>Bienvenido {{usuario.nombre}}</h3>
+    </div>
+    <div class="container p-3">
+        
+      <div *ngIf="isEmpleador; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <div class="row p-3">
+          <div class="col">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Inscribir cursos
+            </button>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #elseBlock></ng-template>
+        
+        <hr>
+        <h4>Lista de Cursos Inscritos</h4>
+        <hr>
+        <div class="row g-3 p-3">
+            <div class=" col-md-4" *ngFor="let curso of cursosfiltro" >
+              <div class="card-group h-100">
+                <div class="card text-white bg-secondary" style="width: 18rem;">
+                  <!--<img [src]="user.imagenServicio" class="card-img-top" alt="..."><img>-->
+        
+                  <div class="card-body">
+                    <h4 class="card-title">{{curso.nombreCurso}}</h4>
+                    <h5 class="card-text">{{curso.idCurso.tipoCurso}}</h5>
+                    <p class="card-text">{{curso.objetivo}}</p>
+                    <h4 class="card-text">$ {{curso.precio}}</h4>
+                    <div *ngIf="isEmpleador; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>
+                        <button class="btn btn-warning" (click)="generarPago(curso)">Inscribir curso</button>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                      <!--<a [routerLink]="['/verServicio',card.idServicio]" class="btn btn-primary">detalle</a>-->
+                      <a class="btn btn-primary">detalle</a>
+                    </ng-template>
+                
+        
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Inscribe los Cursos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col"># Id</th>
+                  <th scope="col">Nombre Curso</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Inscribir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let a of cursos">
+                  <th scope="row">{{ a.id }}</th>
+                  <td>{{ a.nombreCurso }}</td>
+                  <td>{{ a.precio }}</td>
+                  <td>
+                    <input type="checkbox" [(ngModel)]="a.checking">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="seleccionarCurso()">Seleccionar Productos</button>
+      </div>
+    </div>
+  </div>
+</div>
+

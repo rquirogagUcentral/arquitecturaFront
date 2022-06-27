@@ -13,5 +13,6 @@ export class Curso
     docente! : Usuario;
     precio: number = 0;
     estudiantes! : Usuario[];
-    lecciones! : Lecciones[] 
+    lecciones! : Lecciones[];
+    checking: boolean = false;
 }

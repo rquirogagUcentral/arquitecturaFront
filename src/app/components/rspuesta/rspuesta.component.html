@@ -1,0 +1,21 @@
+<div class="container p3">
+    <h5 class="modal-title" id="exampleModalLabel">Generar Respuesta</h5>
+    <div class="row g-3">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Respuesta" aria-label="First name" [(ngModel)]="respuesta.respuesta">
+        </div>
+    </div>
+    <div class="row g-3">
+      <div class="input-field col-md-6">
+        <label for="tipoDocEmp">Valor</label>
+        <select class="form-select" name="tipoDoc" aria-label="Default select example" [(ngModel)]="valorResp">
+          <option value="" disabled selected>Seleccione opcion correcta</option>
+          <option [ngValue]="true" >true</option>
+          <option [ngValue]="false">false</option>
+        </select>
+      </div>
+    </div>
+    <div class="row g-3 align-center">
+        <button type="button" class="btn btn-primary" (click)="agregarRespuesta()">Agregar Respuesta</button>
+    </div>
+</div>

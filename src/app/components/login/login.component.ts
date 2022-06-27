@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['empresa'])
           break;
         case 4:
-          this._router.navigate(['empleado'])
+          this._router.navigate(['empleado-detalle/',this.usuario.id])
           break;
       }
       Swal.fire({
